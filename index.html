@@ -4,12 +4,7 @@
   <title>小專題</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <style type="text/css">
-  /* .product{
-    width: 33%;
-    /* background-color: rgb(196, 132, 83);  */
-    /* border: 1px solid black; */
-    /* }*/   
+  <style type="text/css">   
   html, body {
       margin: 0;
       padding: 0;
@@ -59,7 +54,8 @@
   .w-100{/*寬度100%*/
     padding: 1PX;
     width: 85%;
-} 
+  } 
+  
   </style>
 </head>
 <body>
@@ -71,14 +67,12 @@
   <header>
     <!-- 導覽start -->
     <div class="container ">
-      
       <nav class="float-left middle ">
         <ul >
-              <li><a href="about.html">關於我們</a></li>
-              <li><a href="product.html">產品介紹</a></li>
-              <li><a href="store.html">門市資訊</a></li>
-              <li><a href="contact.html">聯絡我們</a></li>
-          </ul>
+              <li><a href="about.html" id="object1"class="fade-in">最新公告</a></li>
+              <li><a href="product.html"id="object2"class="fade-in">貓咪圖鑑</a></li>
+              <li><a href="store.html"id="object3"class="fade-in">留言討論版</a></li>
+        </ul>
       </nav>
      </div>
       <!-- 導覽end -->
@@ -119,7 +113,7 @@
   </div>
 
 
-
+  <script src="fadein.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
   <script type="text/javascript">
