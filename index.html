@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小專題</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <style type="text/css">
+  /* .product{
+    width: 33%;
+    /* background-color: rgb(196, 132, 83);  */
+    /* border: 1px solid black; */
+    /* }*/   
+  html, body {
+      margin: 0;
+      padding: 0;
+    }
+  * {
+      box-sizing: border-box;
+    }
+  /*  輪播start*/
+  .slider {
+        width: 50%;
+        margin: 10px auto;
+    }
+
+  .slick-slide {
+      margin: 0px 20px;
+    }
+
+  .slick-slide img {
+      width: 100%;
+    }
+  .slick-prev:before,
+  .slick-next:before {
+      color: black;
+  }
+  .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+  } 
+  .slick-active {
+    opacity: .5;
+  }
+  .slick-current {
+      opacity: 1;
+  }
+  /*輪播end*/
+  
+  .float-left{/*向左對齊*/
+    float: left;
+  }
+  /* 按鈕特效start*/
+  .middle{
+    text-align: center;
+  }
+  
+  </style>
+</head>
+<body>
+  <header class="header-1">
+    <div class="container">
+      <h1 class="h1_top"><a href="">喵的攻略網</a></h1>
+    </div>
+  </header>
+  <header>
+    <div class="container ">
+      
+      <nav class="float-left middle ">
+        <ul >
+              <li><a href="about.html">關於我們</a></li>
+              <li><a href="product.html">產品介紹</a></li>
+              <li><a href="store.html">門市資訊</a></li>
+              <li><a href="contact.html">聯絡我們</a></li>
+          </ul>
+      </nav>
+     </div> 
+  </header>
+  <!-- 輪播start -->
+  <div class="container">
+    <h2>近期轉蛋</h2>
+    <section class="lazy slider" data-sizes="50vw">
+      <div>
+        <img  src="file/11-13.png"data-sizes="100vw">
+      </div>
+      <div>
+        <img src="file/11-20.png" data-sizes="100vw">
+      </div>
+      <div>
+        <img src="file/13-15.png" data-sizes="100vw">
+      </div>
+      <div>
+        <img src="file/15-18.png" data-sizes="100vw">
+      </div>
+    </section>
+  </div>
+  <!-- 輪播end -->
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      });
+      $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+      });
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+      });
+      $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+      $(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+    });
+  </script>
+
+</body>
+</html>
