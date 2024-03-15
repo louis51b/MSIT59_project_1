@@ -78,7 +78,7 @@ nav>ul>li>a{
     text-align: center;
     justify-self:center;
   }
-  /* 導覽相關end */
+/* 導覽相關end */
   .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -87,7 +87,6 @@ nav>ul>li>a{
     max-width: 1920px;
     margin: auto;
   }
-  
   .flex-container > .new {
     width: 20%;
     line-height: 75px;
@@ -96,7 +95,7 @@ nav>ul>li>a{
   .new>p{
     text-align: center;
   }
-  /*開場動畫start */
+/*開場動畫start */
   .fade-in {
     opacity: 0; /*透明度*/
     transition: opacity 2s;
@@ -104,7 +103,7 @@ nav>ul>li>a{
   .show {
     opacity: 1;
   }
-  /*開場動畫end*/
+/*開場動畫end*/
 /*footer相關開始*/
 #shadowtxt {
   text-shadow: 2px 2px 6px #CE5937;

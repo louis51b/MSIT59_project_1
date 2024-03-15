@@ -92,6 +92,51 @@
     display: flex;
     position: relative;
     width: 100%; /* 或者根據圖片大小設置 */
+    justify-content: center;
+    align-items: flex-end; /* 對齊容器底部 */
+    overflow: hidden;
+  }
+  
+  @keyframes bounce_bottom { /*main圖片動畫*/
+    0% {
+      transform: translateY(100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateY(-20px); /* 向上跳躍 */
+    }
+    50% {
+      transform: translateY(0); /* 回到終點位置 */
+    }
+    
+    100% {
+      transform: translateY(0); /* 最終定位在容器底部 */
+    }
+  }
+  @keyframes bounce_left { /*main圖片動畫*/
+    0% {
+      transform: translateX(100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateX(-20px); /* 向上跳躍 */
+    }
+    50% {
+      transform: translateX(0); /* 回到終點位置 */
+    }
+    
+    100% {
+      transform: translateX(0); /* 最終定位在容器底部 */
+    }
+  }
+  @keyframes bounce_right { /*main圖片動畫*/
+    0% {
+      transform: translateX(-100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateX(25px); /* 向上跳躍 */
+    }
+    100% {
+      transform: translateX(0); /* 最終定位在容器底部 */
+    }
   }
   .bg1 {
     position: absolute;
@@ -99,18 +144,23 @@
     top: 500px;
     left: 810px;
     height: 40%;
+    animation: bounce_bottom  2s ease forwards; /* 動畫名稱、持續時間、緩動效果、動畫填充模式 */
+
   }
   .bg2{
     position: absolute;
     top: 0px;
     left:0px;
     height: 35%; 
+    animation: bounce_left  3s ease forwards;
   }
   .bg3{
     position: absolute;
     top: 500px;
     left:1600px;
     height: 35%; 
+    animation: bounce_right  2s ease forwards;
+
   }
   .bg4{
     position: absolute;  
@@ -129,12 +179,14 @@
     top: 100px;
     left:1650px;
     height: 50%; 
+    animation: bounce_left  3s ease forwards;
   }
   .bg7{
     position: absolute;  
     top: 300px;
     left:100px;
     height: 60%; 
+    animation: bounce_right  2s ease forwards;
   }
   .bg8{
     position: absolute;  
@@ -176,21 +228,19 @@
       <!-- 導覽end -->
   </header>
   <!-- main圖片start -->
-  
   <div class="bg-container  ">
-    <img class="w-100  " src="file/mainvisual_bg.gif"  alt="">
+    <img class="w-100" src="file/mainvisual_bg.gif"  alt="">
     <img class="bg1" src="file/mainvisual_chara01.png"  alt="">
     <img class="bg2" src="file/mainvisual_chara02.png"  alt="">
     <img class="bg3" src="file/mainvisual_chara03.png"  alt="">
-    <img class="bg4" src="file/mainvisual_chara04.png"  alt="">
-    <img class="bg5" src="file/mainvisual_chara05.png"  alt="">
+    <img id="bg-img-1" class="bg4 fade-in" src="file/mainvisual_chara04.png"  alt="">
+    <img id="bg-img-2" class="bg5 fade-in" src="file/mainvisual_chara05.png"  alt="">
     <img class="bg6" src="file/mainvisual_chara06.png"  alt="">
     <img class="bg7" src="file/mainvisual_chara07.png"  alt="">
-    <img class="bg8" src="file/mainvisual_chara08.png"  alt="">
-    <img class="bg9" src="file/mainvisual_chara09.png"  alt="">
+    <img id="bg-img-3" class="bg8 fade-in" src="file/mainvisual_chara08.png"  alt="">
+    <img id="bg-img-4" class="bg9 fade-in" src="file/mainvisual_chara09.png"  alt="">
 
   </div>
-
   <!-- main圖片end -->
   <!-- 輪播start -->
   <div class="flex-container section-flex ">
