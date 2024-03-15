@@ -1,12 +1,12 @@
 .header-1{
-    height: 200px;
+    height: 100px;
     /* background-image: url("file/index-bg.jpg"); */
     background-size: auto  ;
     background-position: top center;
 }
 .h1_top{
     width: 100%;
-    height: 40%;
+    height: 20%;
     margin: 0;
     margin-bottom: 40px;
     background-size:  100%  ;
@@ -17,7 +17,6 @@ h1>a{
     color: #000;text-decoration: none;
     display: block;
     width: 100%;
-    text-align: center;
     
 }
 /* 導覽相關start */
@@ -160,3 +159,23 @@ footer>.flex-container{
   color: #000;
 }
 /*麵包屑end*/
+/*輪播字start*/
+.position-relative{
+  position: relative;
+}
+.position-absolute{
+  position: absolute;
+}
+.tag{
+  right: -15px;
+  top: -15px;
+  background-color: red;
+  color: white;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+}
+/*輪播字end*/

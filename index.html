@@ -61,8 +61,12 @@
   }
   .w-100{/*寬度100%*/
     padding: 1PX;
-    width: 85%;
+    width: 100%;
   } 
+  .w-85{/*寬度100%*/
+    padding: 1PX;
+    width: 80%;
+  }
   .flex-container>.new>p{
     margin-top: 0;
     margin-bottom: 0;
@@ -83,12 +87,78 @@
     margin: 0;
     text-align: start;
   }
+  /*main-bg-jpg start*/
+  .bg-container {
+    display: flex;
+    position: relative;
+    width: 100%; /* 或者根據圖片大小設置 */
+    
+  }
+  .bg1 {
+    position: absolute;
+    /* 讓第二張圖片稍微偏移，以便兩張圖片都能看見 */
+    top: 500px;
+    left: 810px;
+    height: 40%;
+  }
+  .bg2{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    height: 35%; 
+  }
+  .bg3{
+    position: absolute;
+    top: 500px;
+    left:1600px;
+    height: 35%; 
+  }
+  .bg4{
+    position: absolute;  
+    top: 100px;
+    left:800px;
+    height: 50%; 
+  }
+  .bg5{
+    position: absolute;  
+    top: 200px;
+    left:1200px;
+    height: 40%; 
+  }
+  .bg6{
+    position: absolute;  
+    top: 100px;
+    left:1650px;
+    height: 50%; 
+  }
+  .bg7{
+    position: absolute;  
+    top: 300px;
+    left:100px;
+    height: 60%; 
+  }
+  .bg8{
+    position: absolute;  
+    top: 350px;
+    left:400px;
+    height: 50%; 
+  }
+  .bg9{
+    position: absolute;  
+    top: 500px;
+    left:1200px;
+    height: 30%; 
+  }
+  
+  /*main-bg-jpg end*/
+
     
   </style>
 </head>
 <body>
   <header class="header-1">
     <div class="flex-container">
+      
       <h1 class="h1_top"><a href="">喵的攻略網</a></h1>
     </div>
   </header>
@@ -100,22 +170,35 @@
               <li><a href="about.html" id="object1"class="fade-in">最新公告</a></li>
               <li><a href="catbook.html"id="object2"class="fade-in">貓咪圖鑑</a></li>
               <li><a href="store.html"id="object3"class="fade-in">留言討論版</a></li>
-              <li><a href="#"id="object4"class="fade-in">聯絡我們</a></li>
+              <li><a href="contact.html"id="object4"class="fade-in">聯絡我們</a></li>
         </ul>
       </nav>
      </div>
       <!-- 導覽end -->
   </header>
+  <!-- main圖片start -->
   
+  <div class="bg-container  ">
+    <img class="w-100  " src="file/mainvisual_bg.gif"  alt="">
+    <img class="bg1" src="file/mainvisual_chara01.png"  alt="">
+    <img class="bg2" src="file/mainvisual_chara02.png"  alt="">
+    <img class="bg3" src="file/mainvisual_chara03.png"  alt="">
+    <img class="bg4" src="file/mainvisual_chara04.png"  alt="">
+    <img class="bg5" src="file/mainvisual_chara05.png"  alt="">
+    <img class="bg6" src="file/mainvisual_chara06.png"  alt="">
+    <img class="bg7" src="file/mainvisual_chara07.png"  alt="">
+    <img class="bg8" src="file/mainvisual_chara08.png"  alt="">
+    <img class="bg9" src="file/mainvisual_chara09.png"  alt="">
+
+  </div>
+
+  <!-- main圖片end -->
   <!-- 輪播start -->
   <div class="flex-container section-flex ">
-    <div class="felx-container">
-      <p></p>
-    </div>
-    <div class="felx-container">
+    <div class="felx-container position-absolute">
       <h2>近期轉蛋</h2>
     </div>
-    <div class="flex-container">
+    <div class="flex-container position-relative">
     <section class="lazy slider" data-sizes="50vw">
       <div>
         <img  src="file/11-13.png"data-sizes="100vw">
@@ -136,35 +219,35 @@
 
   <div class="flex-container ">
     <div class=" new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品1</p>   
     </div>
     <div class=" new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品2</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品1</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品3</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
     </div>
     <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-100">
+      <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
     </div>
   </div>
