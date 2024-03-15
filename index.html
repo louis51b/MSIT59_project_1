@@ -49,36 +49,58 @@
     text-align: center;
   }
   .new{
-    width: 25%;
+    width: 28%;
+    height: 300px;
+    margin-top: 10px;
+
   }
   .w-100{/*寬度100%*/
     padding: 1PX;
     width: 85%;
   } 
-  
+  .flex-container>.new>p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .of-hidden{
+    max-width: 450px;
+    overflow: hidden;
+   img {
+      max-width: 450px;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+    }
+  }
+  .of-hidden>p{
+    margin: 0;
+    text-align: start;
+  }
   </style>
 </head>
 <body>
   <header class="header-1">
-    <div class="container">
+    <div class="flex-container">
       <h1 class="h1_top"><a href="">喵的攻略網</a></h1>
     </div>
   </header>
   <header>
     <!-- 導覽start -->
-    <div class="container ">
+    <div class="flex-container ">
       <nav class="float-left middle ">
         <ul >
               <li><a href="about.html" id="object1"class="fade-in">最新公告</a></li>
               <li><a href="product.html"id="object2"class="fade-in">貓咪圖鑑</a></li>
               <li><a href="store.html"id="object3"class="fade-in">留言討論版</a></li>
+              <li><a href="#"id="object4"class="fade-in">聯絡我們</a></li>
         </ul>
       </nav>
      </div>
       <!-- 導覽end -->
   </header>
   <!-- 輪播start -->
-  <div class="container">
+  <div class="flex-container">
     <h2>近期轉蛋</h2>
     <section class="lazy slider" data-sizes="50vw">
       <div>
@@ -97,21 +119,44 @@
   </div>
   <!-- 輪播end -->
 
-  <div class="container ">
-    <div class="float-left new">
+  <div class="flex-container ">
+    <div class=" new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-100">
       <p>商品1</p>   
     </div>
-    <div class="float-left new">
+    <div class=" new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-100">
-      <p>商品1</p><p>商品1</p><p>商品1</p>   
+      <p>商品2</p>   
     </div>
-    <div class="float-left new">
+    <div class="new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-100">
-      <p>商品1</p><p>商品1</p><p>商品1</p>   
+      <p>商品1</p>   
+    </div>
+    <div class="new of-hidden">
+      <img src="file/貓咪.png" alt="" class="w-100">
+      <p>商品3</p>   
+    </div>
+    <div class="new of-hidden">
+      <img src="file/貓咪.png" alt="" class="w-100">
+      <p>商品4</p>   
+    </div>
+    <div class="new of-hidden">
+      <img src="file/貓咪.png" alt="" class="w-100">
+      <p>商品4</p>   
+    </div>
+    <div class="new of-hidden">
+      <img src="file/貓咪.png" alt="" class="w-100">
+      <p>商品4</p>   
+    </div>
+    <div class="new of-hidden">
+      <img src="file/貓咪.png" alt="" class="w-100">
+      <p>商品4</p>   
     </div>
   </div>
-
+  
+  <div class="footer">
+    
+  </div>
 
   <script src="fadein.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
