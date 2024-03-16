@@ -19,7 +19,7 @@
     }
   /*  輪播start*/
   .slider {
-        width: 50%;
+        width: 75%;
         margin: 10px auto;
     }
 
@@ -49,8 +49,62 @@
 
   }
   /*輪播end*/
+  /* 選項顯示資料start */
+  .tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
 
-    
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+  /* 選項顯示資料end */
+  
   </style>
 </head>
 <body>
@@ -113,12 +167,40 @@
     </div>
   </div>
   <!-- 輪播end -->
+  <!-- 測試 -->
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'tab1')" id="Opentab">關卡攻略</button>
+      <button class="tablinks" onclick="openCity(event, 'tab2')" >狂亂貓系列</button>
+      <button class="tablinks" onclick="openCity(event, 'tab3')">素材經驗系列</button>
+      <button class="tablinks" onclick="openCity(event, 'tab4')">合作關卡系列</button>
+    </div>
+  
+    <div id="tab1" class="tabcontent">
+      <h3>關卡攻略</h3>
+      <p>London is the capital city of England.</p>
+   </div>
+  
+    <div id="tab2" class="tabcontent">
+      <h3>狂亂貓系列</h3>
+      <p>Paris is the capital of France.</p> 
+    </div>
+  
+    <div id="tab3" class="tabcontent">
+      <h3>素材經驗系列</h3>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
 
+    <div id="tab4" class="tabcontent">
+      <h3>合作關卡系列</h3>
+      <p>Tokyo is the capital of Japan.</p>
+    </div>
+  <!-- 測試 -->
+ <!--index內容start  -->
   <div class="flex-container ">
     <!-- 左選單start -->
     <div class="flex-30 menu">
       <ul>
-        <li><a href="">關卡攻略</a></li>
+        <li><a href="index.html">關卡攻略</a></li>
         <li><a href="">狂亂貓系列</a></li>
         <li><a href="">素材經驗系列</a></li>
         <li><a href="">合作關卡系列</a></li>
@@ -128,7 +210,7 @@
     <!-- 右側內容start -->
     <div class="flex-70">
       <div class=" new of-hidden ">
-      <img src="file/貓咪.png" alt="" class="w-85">
+      <img src="file/狂亂貓降臨.png" alt="" class="w-85">
       <p>商品1</p>   
       </div>
       <div class=" new of-hidden">
@@ -154,6 +236,7 @@
     </div>  
   
   </div>
+ <!--index內容end  -->
   
   <footer>
     <div class="flex-container" id="shadowtxt">
@@ -227,6 +310,25 @@
         infinite: true
       });
     });
+  // 選項顯示資料start
+  function openCity(evt, cityName) {
+   var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("Opentab").click();
+  // 選項顯示資料end
+
+
   </script>
 
 </body>
