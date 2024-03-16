@@ -83,17 +83,20 @@ nav>ul>li>a{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    justify-content: space-between;
     max-width: 1920px;
     margin: auto;
   }
-  .flex-container > .new {
-    width: 20%;
-    line-height: 75px;
-    font-size: 16px;
+  .flex-container >.flex-70{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  .new>p{
-    text-align: center;
+  .flex-container >.flex-70> .new { /*公告連結排序*/
+    font-size: 16px;
+    width: 50%;
+  }
+  .new>p{ /*公告連結文字設定*/
+    text-align:left;
   }
 /*開場動畫start */
   .fade-in {
@@ -178,3 +181,187 @@ footer>.flex-container{
   font-size: 12px;
 }
 /*輪播字end*/
+  /* 按鈕特效start*/
+  .middle{
+    text-align: center;
+  }
+  .w-100{/*寬度100%*/
+    padding: 1PX;
+    width: 100%;
+  } 
+  .w-85{/*寬度100%*/
+    padding: 1PX;
+    width: 80%;
+  }
+  .flex-container>.new>p{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .flex-container>.new{
+    width: 190px;
+    margin: 10px;
+  line-height: 75px;
+  }
+  .of-hidden{
+    margin: 10px;
+    max-width: 450px;
+    overflow: hidden;
+   img {
+      max-width: 450px;
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+    }
+  }
+  .of-hidden>p{
+    margin: 0;
+    text-align: start;
+  }
+  /*main-bg-jpg start*/
+  .bg-container {
+    display: flex;
+    position: relative;
+    width: 100%; /* 或者根據圖片大小設置 */
+    justify-content: center;
+    align-items: flex-end; /* 對齊容器底部 */
+    overflow: hidden;
+  }
+  
+  @keyframes bounce_bottom { /*main圖片動畫*/
+    0% {
+      transform: translateY(100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateY(-20px); /* 向上跳躍 */
+    }
+    50% {
+      transform: translateY(0); /* 回到終點位置 */
+    }
+    
+    100% {
+      transform: translateY(0); /* 最終定位在容器底部 */
+    }
+  }
+  @keyframes bounce_left { /*main圖片動畫*/
+    0% {
+      transform: translateX(100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateX(-20px); /* 向上跳躍 */
+    }
+    50% {
+      transform: translateX(0); /* 回到終點位置 */
+    }
+    
+    100% {
+      transform: translateX(0); /* 最終定位在容器底部 */
+    }
+  }
+  @keyframes bounce_right { /*main圖片動畫*/
+    0% {
+      transform: translateX(-100%); /* 從完全隱藏在容器下方開始 */
+    }
+    30% {
+      transform: translateX(25px); /* 向上跳躍 */
+    }
+    100% {
+      transform: translateX(0); /* 最終定位在容器底部 */
+    }
+  }
+  .bg1 {
+    position: absolute;
+    /* 讓第二張圖片稍微偏移，以便兩張圖片都能看見 */
+    top: 500px;
+    left: 810px;
+    height: 40%;
+    animation: bounce_bottom  2s ease forwards; /* 動畫名稱、持續時間、緩動效果、動畫填充模式 */
+
+  }
+  .bg2{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    height: 35%; 
+    animation: bounce_left  3s ease forwards;
+  }
+  .bg3{
+    position: absolute;
+    top: 500px;
+    left:1600px;
+    height: 35%; 
+    animation: bounce_right  2s ease forwards;
+
+  }
+  .bg4{
+    position: absolute;  
+    top: 100px;
+    left:800px;
+    height: 50%; 
+  }
+  .bg5{
+    position: absolute;  
+    top: 200px;
+    left:1200px;
+    height: 40%; 
+  }
+  .bg6{
+    position: absolute;  
+    top: 100px;
+    left:1650px;
+    height: 50%; 
+    animation: bounce_left  3s ease forwards;
+  }
+  .bg7{
+    position: absolute;  
+    top: 300px;
+    left:100px;
+    height: 60%; 
+    animation: bounce_right  2s ease forwards;
+  }
+  .bg8{
+    position: absolute;  
+    top: 350px;
+    left:400px;
+    height: 50%; 
+  }
+  .bg9{
+    position: absolute;  
+    top: 500px;
+    left:1200px;
+    height: 30%; 
+  }
+  
+  /*main-bg-jpg end*/
+  /*flex左右排版start*/
+  .flex-70{
+    flex: 70%;
+  }
+  .flex-30{
+    flex: 30%;
+  }
+  /*flex左右排版end*/
+
+  /*左選設定start*/
+ .menu>ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+  }
+  .menu>ul>li>a:hover{color: tomato;}
+  .menu>ul>li>a{
+    background-color: burlywood;
+    text-align: center;
+    display: block;
+    line-height: 40px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+  .menu{
+    margin-top: 10px;  
+    width: 25%;
+    margin-bottom:100% ;
+    margin: top 20px;
+  }
+  /*左選單end*/

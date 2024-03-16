@@ -49,159 +49,6 @@
 
   }
   /*輪播end*/
-  /* 按鈕特效start*/
-  .middle{
-    text-align: center;
-  }
-  .new{
-    width: 28%;
-    height: 200px;
-    margin-top: 10px;
-
-  }
-  .w-100{/*寬度100%*/
-    padding: 1PX;
-    width: 100%;
-  } 
-  .w-85{/*寬度100%*/
-    padding: 1PX;
-    width: 80%;
-  }
-  .flex-container>.new>p{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .of-hidden{
-    margin: 0;
-    max-width: 450px;
-    overflow: hidden;
-   img {
-      max-width: 450px;
-      &:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-      }
-    }
-  }
-  .of-hidden>p{
-    margin: 0;
-    text-align: start;
-  }
-  /*main-bg-jpg start*/
-  .bg-container {
-    display: flex;
-    position: relative;
-    width: 100%; /* 或者根據圖片大小設置 */
-    justify-content: center;
-    align-items: flex-end; /* 對齊容器底部 */
-    overflow: hidden;
-  }
-  
-  @keyframes bounce_bottom { /*main圖片動畫*/
-    0% {
-      transform: translateY(100%); /* 從完全隱藏在容器下方開始 */
-    }
-    30% {
-      transform: translateY(-20px); /* 向上跳躍 */
-    }
-    50% {
-      transform: translateY(0); /* 回到終點位置 */
-    }
-    
-    100% {
-      transform: translateY(0); /* 最終定位在容器底部 */
-    }
-  }
-  @keyframes bounce_left { /*main圖片動畫*/
-    0% {
-      transform: translateX(100%); /* 從完全隱藏在容器下方開始 */
-    }
-    30% {
-      transform: translateX(-20px); /* 向上跳躍 */
-    }
-    50% {
-      transform: translateX(0); /* 回到終點位置 */
-    }
-    
-    100% {
-      transform: translateX(0); /* 最終定位在容器底部 */
-    }
-  }
-  @keyframes bounce_right { /*main圖片動畫*/
-    0% {
-      transform: translateX(-100%); /* 從完全隱藏在容器下方開始 */
-    }
-    30% {
-      transform: translateX(25px); /* 向上跳躍 */
-    }
-    100% {
-      transform: translateX(0); /* 最終定位在容器底部 */
-    }
-  }
-  .bg1 {
-    position: absolute;
-    /* 讓第二張圖片稍微偏移，以便兩張圖片都能看見 */
-    top: 500px;
-    left: 810px;
-    height: 40%;
-    animation: bounce_bottom  2s ease forwards; /* 動畫名稱、持續時間、緩動效果、動畫填充模式 */
-
-  }
-  .bg2{
-    position: absolute;
-    top: 0px;
-    left:0px;
-    height: 35%; 
-    animation: bounce_left  3s ease forwards;
-  }
-  .bg3{
-    position: absolute;
-    top: 500px;
-    left:1600px;
-    height: 35%; 
-    animation: bounce_right  2s ease forwards;
-
-  }
-  .bg4{
-    position: absolute;  
-    top: 100px;
-    left:800px;
-    height: 50%; 
-  }
-  .bg5{
-    position: absolute;  
-    top: 200px;
-    left:1200px;
-    height: 40%; 
-  }
-  .bg6{
-    position: absolute;  
-    top: 100px;
-    left:1650px;
-    height: 50%; 
-    animation: bounce_left  3s ease forwards;
-  }
-  .bg7{
-    position: absolute;  
-    top: 300px;
-    left:100px;
-    height: 60%; 
-    animation: bounce_right  2s ease forwards;
-  }
-  .bg8{
-    position: absolute;  
-    top: 350px;
-    left:400px;
-    height: 50%; 
-  }
-  .bg9{
-    position: absolute;  
-    top: 500px;
-    left:1200px;
-    height: 30%; 
-  }
-  
-  /*main-bg-jpg end*/
 
     
   </style>
@@ -246,6 +93,7 @@
   <div class="flex-container section-flex ">
     <div class="felx-container position-absolute">
       <h2>近期轉蛋</h2>
+      <p></p>
     </div>
     <div class="flex-container position-relative">
     <section class="lazy slider" data-sizes="50vw">
@@ -262,43 +110,49 @@
         <img src="file/15-18.png" data-sizes="100vw">
       </div>
     </section>
+    </div>
   </div>
-</div>
   <!-- 輪播end -->
 
   <div class="flex-container ">
-    <div class=" new of-hidden">
+    <!-- 左選單start -->
+    <div class="flex-30 menu">
+      <ul>
+        <li><a href="">關卡攻略</a></li>
+        <li><a href="">狂亂貓系列</a></li>
+        <li><a href="">素材經驗系列</a></li>
+        <li><a href="">合作關卡系列</a></li>
+    </ul>
+    </div>
+    <!-- 左選單end -->
+    <!-- 右側內容start -->
+    <div class="flex-70">
+      <div class=" new of-hidden ">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品1</p>   
-    </div>
-    <div class=" new of-hidden">
+      </div>
+      <div class=" new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品2</p>   
-    </div>
-    <div class="new of-hidden">
+      </div>
+      <div class="new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品1</p>   
-    </div>
-    <div class="new of-hidden">
+      </div>
+      <div class="new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品3</p>   
-    </div>
-    <div class="new of-hidden">
+      </div>
+      <div class="new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
-    </div>
-    <div class="new of-hidden">
+      </div>
+      <div class="new of-hidden">
       <img src="file/貓咪.png" alt="" class="w-85">
       <p>商品4</p>   
-    </div>
-    <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-85">
-      <p>商品4</p>   
-    </div>
-    <div class="new of-hidden">
-      <img src="file/貓咪.png" alt="" class="w-85">
-      <p>商品4</p>   
-    </div>
+      </div>
+    </div>  
+  
   </div>
   
   <footer>
