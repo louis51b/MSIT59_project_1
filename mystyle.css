@@ -182,7 +182,7 @@ footer>.flex-container{
   font-size: 12px;
 }
 /*輪播字end*/
-  /* 按鈕特效start*/
+/* 按鈕特效start*/
   .middle{
     text-align: center;
   }
@@ -194,7 +194,7 @@ footer>.flex-container{
     padding: 1PX;
     width: 80%;
   }
-  .flex-container>.new>p{/*公告連結文字設定*/
+  .flex-container>.new>p,.flex-container>.new>p{/*公告連結文字設定*/
     margin-top: 0;
     margin-bottom: 0;
     text-align:left;
@@ -206,7 +206,7 @@ footer>.flex-container{
     line-height: 25px;
     justify-content: space-between;
   }
-  .new>img{
+  .new>a>img{
     width: 190px;
     height: 53.1px;
    
@@ -223,10 +223,8 @@ footer>.flex-container{
       }
     }
   }
-  .of-hidden>p{
-    margin: 0;
-    text-align: start;
-  }
+  
+
   /*main-bg-jpg start*/
   .bg-container {
     display: flex;
