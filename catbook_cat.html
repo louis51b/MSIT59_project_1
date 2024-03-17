@@ -92,14 +92,44 @@
   .flex-container>.of-hidden>p>a:hover{
     color: tomato;
   }
-
   /*貓咪區end*/
   /* 按鈕特效end*/
-  .new>a>img{/*圖鑑專用*/
-    width: 192px; 
-    height: auto;  
+  p{
+    font-size: 18px;
+    text-align: center;
+  }
+  .imgcontainer {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
   }
   
+  .image-container {
+    margin: 0 10px; /* 每張圖片之間的間距，可根據需要調整 */
+  }
+  
+  .catimg {
+    display: block; /* 避免圖片下方有空隙 */
+    width: 100px; /* 或其他固定大小，根據需要調整 */
+    height: auto; /* 保持圖片原有比例 */
+  }
+  table,td,th {
+    border: 2px dotted #6e6d6d;
+    border-collapse: collapse;
+    font-size: 18px;
+    text-align: center;
+
+  }
+  table{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .smalltable{
+    width: auto;
+    margin: auto;
+    margin-top: 20px;
+  }
     
   </style>
 </head>
@@ -128,57 +158,218 @@
     <div class="flex-container">
         <ol>
             <li><a href="index.html">首頁</a></li>
-            <li>貓咪圖鑑</li>
+            <li><a href="catbook.html">貓咪圖鑑</a></li>
+            <li>貓咪</li>
         </ol>
     </div>
  </div>
 <!--麵包屑結束 breadcrumb -->
- 
-  
-
-  <div class="flex-container ">
-    <div class=" new of-hidden">
-      <a href="catbook_cat.html"><img src="file/貓咪.png"   alt="" class="w-100"></a>
-      <p><a href="catbook_cat.html">貓咪</a></p>   
+<!-- 內容start -->
+<p>貓咪 → 健美貓 → 摩西根貓</p>
+<div class="imgcontainer">
+    <div class="image-container">
+      <img class="catimg" src="file/貓咪一階.png" alt="Image 1">
     </div>
-    <div class=" new of-hidden">
-      <a href=""><img src="file/坦克貓-2.png" alt="" class="w-100"></a>
-      <p><a href="#">坦克貓</a></p>   
+    <div class="image-container">
+      <img class="catimg" src="file/貓咪二階.png" alt="Image 2">
     </div>
-    <div class="new of-hidden">
-      <a href=""><img src="file/戰鬥貓.png" alt="" class="w-100"></a> 
-     <p><a href="#">戰鬥貓</a></p>   
+    <div class="image-container">
+      <img class="catimg" src="file/貓咪三階.png" alt="Image 3">
     </div>
-    <div class="new of-hidden">
-      <a href=""><img src="file/噁心貓.png" alt="" class="w-100"></a>  
-    <p><a href="#">噁心貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-      <a href=""><img src="file/牛貓.png" alt="" class="w-100"></a>
-      <p><a href="#">牛貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-      <a href=""><img src="file/鳥貓-2.png" alt="" class="w-100"></a>
-      <p><a href="#">鳥貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-        <a href=""><img src="file/魚貓-2.png" alt="" class="w-100"></a>
-        <p><a href="#">魚貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-        <a href=""><img src="file/蜥蜴貓-2.png" alt="" class="w-100"></a>
-        <p><a href="#">蜥蜴貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-        <a href=""><img src="file/巨神貓-2.png" alt="" class="w-100"></a>
-        <p><a href="#">巨神貓</a></p>   
-    </div>
-    <div class="new of-hidden">
-      <a href=""><img src="file/貓咪超人.png" alt="" class="w-100"></a>
-      <p><a href="#">貓咪超人</a></p>   
-    </div>
-  </div>
-  
+</div>
+<p>
+    一階/二階：
+</p>
+<table >
+    <tr>
+        <th>等級</th>
+        <th>Lv10</th>
+        <th>Lv20</th>
+        <th>Lv30</th>
+        <th>Lv40</th>
+        <th>Lv50</th>
+        <th>每提升一級</th>
+    </tr>
+    <tr>
+        <th>HP</th>
+        <td>700</td>
+        <td>200</td>
+        <td>1700</td>
+        <td>2200</td>
+        <td>2700</td>
+        <td>+50</td>
+    </tr>
+    <tr>
+        <th>硬度</th>
+        <td>233</td>
+        <td>400</td>
+        <td>566</td>
+        <td>733</td>
+        <td>900</td>
+        <td>+16</td>
+    </tr>
+    <tr>
+        <th>攻擊力</th>
+        <td>55</td>
+        <td>95</td>
+        <td>135</td>
+        <td>175</td>
+        <td>215</td>
+        <td>+5</td>
+    </tr>
+    <tr>
+        <th>DPS</th>
+        <td>44</td>
+        <td>77</td>
+        <td>109</td>
+        <td>141</td>
+        <td>174</td>
+        <td>+3</td>
+    </tr>
+    <tr>
+        <th>攻擊頻率</th>
+        <td>1.23 秒/下</td>
+        <th>出招時間</th>
+        <td>0.27 秒</td>
+        <th rowspan="2">收招時間</th>
+        <th>一階:0.33 秒</th>
+        <th rowspan="3">單體攻擊</th>
+    </tr>
+    <tr>
+        <th>攻擊間隔</th>
+        <td>1 秒</td>
+        <th>射程</th>
+        <td>140</td>
+        <th>二階:0.27 秒</th>
+    </tr>
+    <tr>
+        <th>KB</th>
+        <td>3</td>
+        <th>跑速</th>
+        <td>10</td>
+        <th>再生產</th>
+        <td>2 秒</td>
+    </tr>
+    <tr>
+        <th>召喚金額</th>
+        <th>一章</th>
+        <td>50</td>
+        <th>二章(傳說)</th>
+        <td>75</td>
+        <th>三章</th>
+        <td>100</td>
+    </tr>
+</table>
+<p>
+    三階：
+</p>
+<table >
+    <tr>
+        <th>等級</th>
+        <th>Lv10</th>
+        <th>Lv20</th>
+        <th>Lv30</th>
+        <th>Lv40</th>
+        <th>Lv50</th>
+        <th>每提升一級</th>
+    </tr>
+    <tr>
+        <th>HP</th>
+        <td>1400</td>
+        <td>2400</td>
+        <td>3400</td>
+        <td>4400</td>
+        <td>5400</td>
+        <td>+100</td>
+    </tr>
+    <tr>
+        <th>硬度</th>
+        <td>466</td>
+        <td>800</td>
+        <td>1133</td>
+        <td>1466</td>
+        <td>1800</td>
+        <td>+33</td>
+    </tr>
+    <tr>
+        <th>攻擊力</th>
+        <td>112</td>
+        <td>192</td>
+        <td>272</td>
+        <td>352</td>
+        <td>432</td>
+        <td>+7</td>
+    </tr>
+    <tr>
+        <th>DPS</th>
+        <td>90</td>
+        <td>155</td>
+        <td>220</td>
+        <td>285</td>
+        <td>350</td>
+        <td>+6</td>
+    </tr>
+    <tr>
+        <th>攻擊頻率</th>
+        <td>1.23 秒/下</td>
+        <th>出招時間</th>
+        <td>0.27 秒</td>
+        <th rowspan="2">收招時間</th>
+        <th rowspan="2">0.27 秒</th>
+        <th rowspan="3">單體攻擊</th>
+    </tr>
+    <tr>
+        <th>攻擊間隔</th>
+        <td>1 秒</td>
+        <th>射程</th>
+        <td>140</td>
+    </tr>
+    <tr>
+        <th>KB</th>
+        <td>3</td>
+        <th>跑速</th>
+        <td>10</td>
+        <th>再生產</th>
+        <td>2 秒</td>
+    </tr>
+    <tr>
+        <th>召喚金額</th>
+        <th>一章</th>
+        <td>50</td>
+        <th>二章(傳說)</th>
+        <td>75</td>
+        <th>三章</th>
+        <td>100</td>
+    </tr>
+</table>
+<table class="smalltable">
+    <tr><th colspan="2">其他資訊</th></tr>
+    <tr>
+        <th>稀有度</th>
+        <td>基本</td>
+    </tr>
+    <tr>
+        <th>最大基本等級</th>
+        <td>20</td>
+    </tr>
+    <tr>
+        <th>最大加值等級</th>
+        <td>+90</td>
+    </tr>
+    <tr>
+        <th>取得方式</th>
+        <td>遊戲開始時最初始的貓咪</td>
+    </tr>
+    <tr>
+        <th>第三進化</th>
+        <td>合計Lv30可進化（Lv. 10 + 20）</td>
+    </tr>
+    <tr>
+        <th>轉蛋</th>
+        <td>貓咪轉蛋</td>
+    </tr>
+</table>
+<!-- 內容end -->
   <footer>
     <div class="flex-container" id="shadowtxt">
       <p>貓咪大戰爭官方網站:</p>
@@ -188,7 +379,6 @@
       <a class="yt-color" href="https://www.youtube.com/channel/UC6UBir4I6o_0dJQa8eoGoDQ"><i class="fa-brands fa-youtube "></i></a>
       <a class="fb-color" href="https://m.facebook.com/NyankoTW"><i class="fa-brands fa-facebook"></i></a> 
     </div>
-    
   </footer>
     
   <script src="fadein.js"></script>
