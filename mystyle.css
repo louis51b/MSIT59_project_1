@@ -1,8 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Zen Kurenaido", sans-serif;
+}
+body{
+background-image: url(file/bg_sns.png);
+}  
+* {
+  box-sizing: border-box;
+}
 .header-1{
     height: 100px;
     /* background-image: url("file/index-bg.jpg"); */
     background-size: auto  ;
     background-position: top center;
+    background-image: none;
 }
 .h1_top{
     width: 100%;
@@ -86,18 +98,7 @@ nav>ul>li>a{
     max-width: 1920px;
     margin: auto;
   }
-  .flex-container >.flex-70{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .flex-container >.flex-70> .new { /*公告連結排序*/
-    font-size: 16px;
-    width: 50%;
-  }
-  .new>p{ /*公告連結文字設定*/
-    text-align:left;
-  }
+  
 /*開場動畫start */
   .fade-in {
     opacity: 0; /*透明度*/
@@ -114,7 +115,7 @@ nav>ul>li>a{
 footer{
   width: 100%;
   padding: 30px;
-  background-color: violet;
+  background-color: silver;
 }  
 footer>.flex-container{
   width: 100%;
@@ -129,7 +130,7 @@ footer>.flex-container{
   margin-right: 15px;
 }
 .fb-color:hover{
-  color:#3840de;
+  color:#6052ca;
 }
 .ig-color:hover{
   color: #E1306C;
@@ -193,14 +194,22 @@ footer>.flex-container{
     padding: 1PX;
     width: 80%;
   }
-  .flex-container>.new>p{
+  .flex-container>.new>p{/*公告連結文字設定*/
     margin-top: 0;
     margin-bottom: 0;
+    text-align:left;
+
   }
   .flex-container>.new{
     width: 190px;
     margin: 10px;
-  line-height: 75px;
+    line-height: 25px;
+    justify-content: space-between;
+  }
+  .new>img{
+    width: 190px;
+    height: 53.1px;
+   
   }
   .of-hidden{
     margin: 10px;
@@ -363,3 +372,8 @@ footer>.flex-container{
     margin-top: 10px;  
   }
   /*左選單end*/
+  hr{ /* 透明漸變 - color - transparent */
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(246, 169, 25, 0.75), rgba(0,0,0,0));
+}
