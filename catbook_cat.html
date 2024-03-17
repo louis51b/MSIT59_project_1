@@ -129,7 +129,9 @@
     width: auto;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
+
     
   </style>
 </head>
@@ -180,6 +182,12 @@
 <p>
     一階/二階：
 </p>
+<div class="imgcontainer">
+    <div class="image-container">
+        <img id="imgSwap" src="file/一階貓咪.gif" >
+        <img src="file/二階貓咪.gif" alt="">
+    </div>
+</div>
 <table >
     <tr>
         <th>等級</th>
@@ -263,6 +271,11 @@
 <p>
     三階：
 </p>
+<div class="imgcontainer">
+    <div class="image-container">
+        <img src="file/三階貓咪.gif" alt="">
+    </div>
+</div>
 <table >
     <tr>
         <th>等級</th>
@@ -441,6 +454,15 @@
         infinite: true
       });
     });
+    // 獲取圖片元素
+    var image = document.getElementById('imgSwap'); 
+    // 設置原始圖片和懸停圖片的路徑
+    var originalImageSrc = "file/一階貓咪.gif"; // 替換為你的圖片路徑
+    var hoverImageSrc = "file/一階貓咪攻擊.gif"; // 替換為你的第二張圖片路徑
+    // 當鼠標懸停在圖片上時，更換圖片
+    image.addEventListener('mouseover', function() { image.src = hoverImageSrc; });
+    // 當鼠標離開圖片時，恢復原始圖片
+    image.addEventListener('mouseout', function() { image.src = originalImageSrc;});
   </script>
 
 </body>
