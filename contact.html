@@ -95,8 +95,39 @@
 
   /*貓咪區end*/
   /* 按鈕特效end*/
-  
-    
+  form{
+    width: 100%;
+    margin: auto;
+  }
+  .label-name{
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"],input[type="email"],textarea,select{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgb(9, 127, 245);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  input[type="submit"]{
+    border: none;
+    background-color: sandybrown;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: aliceblue;
+    cursor: pointer;/*鼠標圖示變更*/
+    font-size: 20px;
+  }
+  input[type="submit"]:hover{
+    background-color: rgb(234, 136, 50);
+  }
+  .label01{
+    display: block;
+    margin-bottom: 10px;
+  }
   </style>
 </head>
 <body>
@@ -129,6 +160,54 @@
     </div>
  </div>
 <!--麵包屑結束 breadcrumb -->
+
+<!-- 表單start -->
+<div class="flex-container"style="flex-direction: column;">
+  <h3>聯絡我們</h3>
+  <!-- table start -->
+  <!-- id要配合for的名稱 name是提交資料庫識別用 -->
+  <!-- placeholder預留文字 autocomplete自動帶入文字 -->
+  <form action="">
+    <label for="name" class="label-name label01">姓名</label>
+    <input type="text" name="name" id="name" placeholder="請輸入姓名" autocomplete="off">
+    <!-- br換行 -->
+    <br> 
+    <label for="phone" class="label-name label01">電話</label>
+    <input type="text" name="phone" id="phone"placeholder="請輸入電話" autocomplete="off">
+    <br>
+    <label for="adress" class="label-name label01">地址</label>
+    <input type="text" name="adress" id="adress"placeholder="請輸入地址"autocomplete="off">
+    <br>
+    <label for="email" class="label-name label01">電子郵件</label>
+    <input type="email" name="email" id="email"autocomplete="off">
+    <br>
+    <label for="target" class="label-name label01">聯絡目的</label>
+    <!--select 下拉式選單 option選項 -->
+    <select name="target" id="target">
+          <option value="q1">內容錯誤回報</option>
+          <option value="q2">網頁錯誤回報</option>
+          <option value="q3">建議</option>
+          <option value="q4">其他</option>
+    </select>
+    <br>
+    <label for="" class="label01">稱謂</label>
+    <!-- 男 -->
+    <input type="radio" id="male" name="gender">
+    <label for="male">先生</label>
+    <!-- 女 -->
+    <input type="radio" id="female" name="gender">
+    <label for="female">女士</label>
+    <br>
+    <label for="msg " class="label01">內容</label>
+    <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="提交資料">
+  </form>
+  <!-- table end --> 
+</div>
+<!-- 表單end -->
+
+
 
   <footer>
     <div class="flex-container" id="shadowtxt">
