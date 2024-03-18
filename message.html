@@ -95,7 +95,84 @@
 
   /*貓咪區end*/
   /* 按鈕特效end*/
-  
+  /* 留言板標籤start */
+    form{
+        margin: auto;  
+        width: 85%;  
+    }
+    .label-name{
+        margin-bottom: 5px;
+    }
+    input[type="text"],textarea{
+        width: 100%;
+        padding: 5px;
+        border: 1px solid rgb(9, 127, 245);
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    input[type="submit"],button{
+        border: none;
+        background-color: sandybrown;
+        padding: 5px;
+        width: 200px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        color: aliceblue;
+        cursor: pointer;/*鼠標圖示變更*/
+        font-size: 20px;
+    }
+    input[type="submit"],button:hover{
+        background-color: rgb(234, 136, 50);
+    }
+    .label01{
+        margin-bottom: 10px;
+    }
+    
+  /* 留言板標籤end */
+  /* 留言板外框start */
+    .msgbox{
+        position: relative;
+        width: 900px;
+        height: 1000px;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(0,0,0);
+        overflow: hidden;
+        border-radius: 20px;
+        margin: auto;
+    }
+    .msgbox::before{
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 140%;
+        background-color: rgb(255, 172, 6);
+        box-shadow: 0 0 20px rgb(8,8,8);
+        animation: animate 4s linear infinite;
+    }
+    .msgbox_content{
+        content: " ";
+        position: absolute;
+        inset: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 16px;
+    }
+    @keyframes animate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    p{
+        word-break: keep-all;
+        word-wrap: break-word;
+        margin: 10px;
+        width:700px ;
+    }
+  /* 留言板外框end */
     
   </style>
 </head>
@@ -124,12 +201,29 @@
     <div class="flex-container">
         <ol>
             <li><a href="index.html">首頁</a></li>
-            <li>聯繫我們</li>
+            <li>留言討論版</li>
         </ol>
     </div>
  </div>
 <!--麵包屑結束 breadcrumb -->
-
+<!-- 留言板start -->
+<h3 style="text-align: center;">留言討論區</h3>
+<form id="messageForm">
+    <label for="name">姓名:</label><br>
+    <input type="text" id="name" name="name" required><br>
+    <label for="message">留言:</label><br>
+    <textarea id="message" name="message" required></textarea><br>
+    <input type="submit" value="提交">
+    <button id="clearMessages">清除所有留言</button>
+</form>
+<div class=" msgbox"> 
+    <div class="msgbox_content">
+        <div class="flex-container">
+            <div id="messages"></div>
+        </div>
+    </div>
+</div> 
+<!-- 留言板end -->
   <footer>
     <div class="flex-container" id="shadowtxt">
       <p>貓咪大戰爭官方網站:</p>
@@ -202,6 +296,50 @@
         infinite: true
       });
     });
+    //留言板start
+    document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('messageForm');
+    const nameInput = document.getElementById('name');
+    const messageInput = document.getElementById('message');
+    const messagesDiv = document.getElementById('messages');
+    const clearMessagesButton = document.getElementById('clearMessages');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const message = messageInput.value.trim();
+        if (name && message) {
+            const messageObject = { name, message, time: new Date().toLocaleString() };
+            saveMessage(messageObject);
+            nameInput.value = '';
+            messageInput.value = '';
+            displayMessages();
+        }
+    });
+
+    clearMessagesButton.addEventListener('click', () => {
+        clearMessages();
+        displayMessages();
+    });
+
+    function saveMessage(message) {
+        let messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.push(message);
+        localStorage.setItem('messages', JSON.stringify(messages));
+    }
+
+    function displayMessages() {
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messagesDiv.innerHTML = messages.map(m => `<p><strong>${m.name}</strong>: ${m.message} <br><em>${m.time}</em></p>`).join('');
+    }
+
+    function clearMessages() {
+        localStorage.removeItem('messages');
+    }
+
+    displayMessages(); // 显示已存储的留言
+});
+    //留言板end
   </script>
 
 </body>
