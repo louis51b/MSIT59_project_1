@@ -95,7 +95,7 @@
 
   /*貓咪區end*/
   /* 按鈕特效end*/
-  input[type="submit"]{
+  button{
     border: none;
     background-color: sandybrown;
     padding: 5px;
@@ -106,7 +106,7 @@
     cursor: pointer;/*鼠標圖示變更*/
     font-size: 20px;
   }
-  input[type="submit"]:hover{
+  button:hover{
     background-color: rgb(234, 136, 50);
   }
   /*  */
@@ -290,7 +290,7 @@
         <i></i>
     </div>
     <div class="inputbox">
-      <input type="text" required name="name" id="name" autocomplete="off">
+      <input type="text" required name="name" id="phone" autocomplete="off">
       <label for="phone" class="label-name label01">電話</label>
       <i></i>
     </div>
@@ -330,7 +330,7 @@
       <label for="msg " class="label">內容</label>
       <i></i>
     </div>
-    <input type="submit" value="提交資料">
+    <button id="submit-click" onclick="submitfun()" >送出</button>
   </div>
     
   
@@ -412,6 +412,15 @@
         infinite: true
       });
     });
+
+    //表單
+    // querySelector可以用id和class
+    var submit=document.querySelector('sumbit-click');
+    
+    function submitfun(){
+      window.alert("提交成功"); 
+
+    }
     
   </script>
 
