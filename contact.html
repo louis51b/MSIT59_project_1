@@ -95,21 +95,6 @@
 
   /*貓咪區end*/
   /* 按鈕特效end*/
-  form{
-    width: 100%;
-    margin: auto;
-  }
-  .label-name{
-    display: block;
-    margin-bottom: 5px;
-  }
-  input[type="text"],input[type="email"],textarea,select{
-    width: 100%;
-    padding: 5px;
-    border: 1px solid rgb(9, 127, 245);
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
   input[type="submit"]{
     border: none;
     background-color: sandybrown;
@@ -124,9 +109,140 @@
   input[type="submit"]:hover{
     background-color: rgb(234, 136, 50);
   }
-  .label01{
-    display: block;
-    margin-bottom: 10px;
+  /*  */
+  .smallbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    /* background: #222; */
+  }
+  .inputbox {
+    position: relative;
+    width: 500px;
+  }
+  .inputbox input {
+    width: 100%;
+    background: transparent;
+    color: #000000;
+    border: 2px solid transparent; /* Adjusted for visibility */
+    outline: none;
+    /* Added padding for better appearance */
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .inputbox select {
+  width: 100%;
+  background: transparent;
+  color: #000000;
+  border: 2px solid transparent; /* Adjusted for visibility */
+  outline: none;
+  /* Added padding for better appearance */
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  }
+  .inputbox textarea {
+    width: 100%;
+    background: transparent;
+    color: #000000;
+    border: 2px solid transparent; /* Adjusted for visibility */
+    outline: none;
+    /* Added padding for better appearance */
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .inputbox label {
+    position: absolute;
+    left: 0;
+    top: 10px; /* Adjusted for consistent alignment */
+    color: rgba(0, 0, 0, 0.633);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+  }
+  .inputbox >label.gender-m {
+    position: absolute;
+    top: 35px; /* Adjusted for consistent alignment */
+    color: rgba(0, 0, 0, 0.633);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+  }
+  .inputbox >label.gender-f {
+    position: absolute;
+    top: 55px; /* Adjusted for consistent alignment */
+    color: rgba(0, 0, 0, 0.633);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: 0.1em;
+    transition: 0.5s;
+  }
+  .inputbox input:valid ~ label,
+  .inputbox input:focus ~ label {
+    color: #000000;
+    transform: translateY(-30px); /* Adjusted for clear visibility */
+    font-size: 18px;
+  }
+  .inputbox select:valid ~ label,
+  .inputbox select:focus ~ label {
+    color: #000000;
+    transform: translateY(-30px); /* Adjusted for clear visibility */
+    font-size: 18px;
+  }
+  .inputbox textarea:valid ~ label,
+  .inputbox textarea:focus ~ label {
+    color: #000000;
+    transform: translateY(-30px); /* Adjusted for clear visibility */
+    font-size: 18px;
+  }
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjusted to align with the bottom of the input */
+    width: 100%;
+    height: 2px;
+    background: #101010;
+    overflow: hidden;
+  }
+  .inputbox i::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff1b69, #ff0, #2196f3, #9c27b0, #ff1b69);
+    animation: animate 2s linear infinite;
+    transform: 0.25s;
+  }
+  .inputbox input:valid ~ i::before,
+  .inputbox input:focus ~ i::before {
+    left: 0;
+  }
+  .inputbox select:valid ~ i::before,
+  .inputbox select:focus ~ i::before {
+    left: 0;
+  }
+  .inputbox textarea:valid ~ i::before,
+  .inputbox textarea:focus ~ i::before {
+    left: 0;
+  }
+  @keyframes animate {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 500px;
+    }
   }
   </style>
 </head>
@@ -163,46 +279,62 @@
 
 <!-- 表單start -->
 <div class="flex-container"style="flex-direction: column;">
-  <h3>聯絡我們</h3>
+  
   <!-- table start -->
   <!-- id要配合for的名稱 name是提交資料庫識別用 -->
   <!-- placeholder預留文字 autocomplete自動帶入文字 -->
-  <form action="">
-    <label for="name" class="label-name label01">姓名</label>
-    <input type="text" name="name" id="name" placeholder="請輸入姓名" autocomplete="off">
-    <!-- br換行 -->
-    <br> 
-    <label for="phone" class="label-name label01">電話</label>
-    <input type="text" name="phone" id="phone"placeholder="請輸入電話" autocomplete="off">
-    <br>
-    <label for="adress" class="label-name label01">地址</label>
-    <input type="text" name="adress" id="adress"placeholder="請輸入地址"autocomplete="off">
-    <br>
-    <label for="email" class="label-name label01">電子郵件</label>
-    <input type="email" name="email" id="email"autocomplete="off">
-    <br>
-    <label for="target" class="label-name label01">聯絡目的</label>
-    <!--select 下拉式選單 option選項 -->
-    <select name="target" id="target">
+  <div class="smallbody">
+    <h3>聯絡我們</h3>
+    <div class="inputbox">
+        <input type="text" required name="name" id="name" autocomplete="off">
+        <label for="name" class="label-name label01">姓名</label>
+        <i></i>
+    </div>
+    <div class="inputbox">
+      <input type="text" required name="name" id="name" autocomplete="off">
+      <label for="phone" class="label-name label01">電話</label>
+      <i></i>
+    </div>
+    <div class="inputbox">
+      
+      <input type="text" required name="adress" id="adress" autocomplete="off">
+      <label for="adress" class="label-name label01">地址</label>
+      <i></i>
+    </div>
+    <div class="inputbox">
+      <input type="text" required name="email" id="email" autocomplete="off">
+      <label for="email" class="label-name label01">電子郵件</label>
+      <i></i>
+    </div>
+    <div class="inputbox">
+      <!--select 下拉式選單 option選項 -->
+      <select name="target" id="target" required>
+          <option id="opnone"></option>
           <option value="q1">內容錯誤回報</option>
           <option value="q2">網頁錯誤回報</option>
           <option value="q3">建議</option>
           <option value="q4">其他</option>
-    </select>
-    <br>
-    <label for="" class="label01">稱謂</label>
-    <!-- 男 -->
-    <input type="radio" id="male" name="gender">
-    <label for="male">先生</label>
-    <!-- 女 -->
-    <input type="radio" id="female" name="gender">
-    <label for="female">女士</label>
-    <br>
-    <label for="msg " class="label01">內容</label>
-    <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
-    <br>
+      </select>
+      <label for="target" regular class="label-name label01">聯絡目的</label>
+      <i></i>
+    </div>
+    <div class="inputbox" style="  flex-direction: reverse;" >
+      <input  style="width: 50%;" type="radio" id="male" name="gender">
+      <label  class="gender-m" for="male">先生</label>
+      <input style="width: 50%;" type="radio" id="female" name="gender">
+      <label  class="gender-f" for="female">女士</label>
+      <label for="" class="label01">稱謂</label>
+      <i></i>
+    </div>
+    <div class="inputbox">
+      <textarea name="msg" id="msg" cols="30" rows="3" required></textarea>
+      <label for="msg " class="label">內容</label>
+      <i></i>
+    </div>
     <input type="submit" value="提交資料">
-  </form>
+  </div>
+    
+  
   <!-- table end --> 
 </div>
 <!-- 表單end -->
@@ -281,6 +413,7 @@
         infinite: true
       });
     });
+    
   </script>
 
 </body>
