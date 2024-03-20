@@ -290,16 +290,16 @@
         <i></i>
     </div>
     <div class="inputbox">
-      <input type="text" required name="name" id="phone" autocomplete="off">
+      <input type="tel" required name="name" id="phone" autocomplete="off">
       <label for="phone" class="label-name label01">電話</label>
       <i></i>
     </div>
-    <div class="inputbox">
+    <!-- <div class="inputbox">
       
-      <input type="text" required name="adress" id="adress" autocomplete="off">
-      <label for="adress" class="label-name label01">地址</label>
+      <input type="text" style="display: none;" required name="adress" id="adress" autocomplete="off">
+      <label for="adress" style="display: none; class="label-name label01">地址</label>
       <i></i>
-    </div>
+    </div> -->
     <div class="inputbox">
       <input type="text" required name="email" id="email" autocomplete="off">
       <label for="email" class="label-name label01">電子郵件</label>
@@ -308,11 +308,11 @@
     <div class="inputbox">
       <!--select 下拉式選單 option選項 -->
       <select name="target" id="target" required>
-          <option id="opnone"></option>
-          <option value="q1">內容錯誤回報</option>
-          <option value="q2">網頁錯誤回報</option>
-          <option value="q3">建議</option>
-          <option value="q4">其他</option>
+          <option id="op0"></option>
+          <option id="op1"value="1">內容錯誤回報</option>
+          <option id="op2"value="2">網頁錯誤回報</option>
+          <option id="op3"value="3">建議</option>
+          <option id="op4"value="4">其他</option>
       </select>
       <label for="target" regular class="label-name label01">聯絡目的</label>
       <i></i>
@@ -330,8 +330,10 @@
       <label for="msg " class="label">內容</label>
       <i></i>
     </div>
-    <button id="submit-click" onclick="submitfun()" >送出</button>
+    <p></p>
+    <button id="submit-click" onclick="checkemail()" >送出</button>
   </div>
+  <div class="contact_thank">感謝回覆！</div>
     
   
   <!-- table end --> 
@@ -415,11 +417,44 @@
 
     //表單
     // querySelector可以用id和class
-    var submit=document.querySelector('sumbit-click');
-    
-    function submitfun(){
-      window.alert("提交成功"); 
-
+    var contact_thank = document.querySelector(".contact_thank");
+    contact_thank.style.display = "none";
+    var smallbody = document.querySelector(".smallbody");
+    function checkemail(){
+      var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var name,phone,email,textarea,hint;
+      name = smallbody.querySelector("[type=text]").value;
+      phone = smallbody.querySelector("[type=tel]").value;
+      email = smallbody.querySelector("#email").value;
+      textarea =smallbody.querySelector("textarea").value;
+      hint = smallbody.querySelector("p");//提示
+            console.log(name);
+            console.log(email);
+            console.log(hint);
+        if(email.match(pattern)) {  
+        if (name == "") {
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入姓名";
+        } else if (phone == "") {
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入電話";
+        } else if (email == "") {
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入Email";
+        }else if (textarea == "") {
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入問題與建議";
+        } else {
+        smallbody.style.display = "none";
+        contact_thank.style.display = "block";
+        }
+      }else if (email == "") {
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入Email";
+        }else{
+        hint.style.display = "block";
+        hint.innerHTML = "請輸入正確的Email";
+      }
     }
     
   </script>
